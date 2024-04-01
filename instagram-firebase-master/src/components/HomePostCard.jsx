@@ -53,21 +53,24 @@ const HomePostCard = ({ post }) => {                     //headerheaderheaderhea
   const { user } = useContext(AuthContext);
   const swiper = useSwiper();
 
-  // delete postdelete postdelete postdelete postdelete postdelete postdelete post
+// delete postdelete postdelete postdelete postdelete postdelete postdelete post
 
   const deletePost = async () => {
     try {
-      // Assuming post.id is the unique identifier for the post
-      const postRef = doc(firestore, `posts/${post?.id}`);
-
-      // Delete the post document
-      await deleteDoc(postRef);
-
-      // Additional cleanup or UI update can be done here if needed
-
-      console.log('Post deleted successfully!');
+     
+      if (user && user.uid === post?.user?.uid) {
+        
+        const postRef = doc(firestore, `posts/${post?.id}`);
+  
+     
+        await deleteDoc(postRef);
+  
+        console.log('Post muvaffaqiyatli o\'chirildi!');
+      } else {
+        console.log('Faqat o\'zingizning postni o\'chirishingiz mumkin');
+      }
     } catch (error) {
-      console.error('Error deleting post:', error);
+      console.error('Postni o\'chirishda xatolik:', error);
     }
   };
 
