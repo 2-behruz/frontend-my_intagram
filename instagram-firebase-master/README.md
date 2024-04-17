@@ -28,7 +28,7 @@ npm i or npm start
  How does it work?
 Mainly in this project I used React JS, firebase and other programming language. It works through netlify link.
 I leave the link below
- my link https://shoxruz-insta.netlify.app/
+ my link https://661f9616c18fff0a6474b46a--dancing-babka-900100.netlify.app/login
  
 THANK YOU SO MUCH FOR YOUR ATTENTION!
 ```
